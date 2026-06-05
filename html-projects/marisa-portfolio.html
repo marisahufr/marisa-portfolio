@@ -1,0 +1,1125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Marisa Érika Huerta Francos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:      #0d1f3c;
+      --deep:      #1a3560;
+      --mid:       #2e5fa3;
+      --steel:     #4a80c4;
+      --sky:       #7aaed6;
+      --mist:      #b8d4e8;
+      --pale:      #ddeaf5;
+      --frost:     #f0f6fb;
+      --white:     #ffffff;
+      --text-dark: #0d1f3c;
+      --text-mid:  #2e4a6e;
+      --text-soft: #5a7a9a;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      color: var(--text-dark);
+      background: var(--white);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.4rem 5vw;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--pale);
+      transition: box-shadow 0.3s;
+    }
+    nav.scrolled { box-shadow: 0 2px 24px rgba(13,31,60,0.08); }
+
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 500;
+      font-size: 1.15rem;
+      letter-spacing: 0.06em;
+      color: var(--navy);
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.4rem;
+      list-style: none;
+    }
+    .nav-links a {
+      text-decoration: none;
+      font-size: 0.78rem;
+      font-weight: 400;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-mid);
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--mid); }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      padding: 0 5vw;
+      background: linear-gradient(135deg, var(--frost) 0%, var(--pale) 60%, var(--mist) 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -20%;
+      right: -10%;
+      width: 60vw;
+      height: 60vw;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(74,128,196,0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -15%;
+      left: -5%;
+      width: 40vw;
+      height: 40vw;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(46,95,163,0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-text { position: relative; z-index: 1; padding-top: 5rem; }
+
+    .hero-eyebrow {
+      font-size: 0.72rem;
+      font-weight: 400;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--steel);
+      margin-bottom: 1.4rem;
+    }
+
+    .hero-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: clamp(3rem, 5.5vw, 5.2rem);
+      line-height: 1.05;
+      color: var(--navy);
+      margin-bottom: 1.6rem;
+    }
+    .hero-name em {
+      font-style: italic;
+      color: var(--mid);
+    }
+
+    .hero-tagline {
+      font-size: 1.05rem;
+      font-weight: 300;
+      color: var(--text-mid);
+      max-width: 480px;
+      margin-bottom: 2.8rem;
+      line-height: 1.8;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-bottom: 3rem;
+    }
+    .hero-tag {
+      font-size: 0.7rem;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.45rem 1rem;
+      border: 1px solid var(--steel);
+      color: var(--mid);
+      border-radius: 2px;
+    }
+
+    .hero-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.8rem;
+      text-decoration: none;
+      font-size: 0.78rem;
+      font-weight: 400;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--white);
+      background: var(--deep);
+      padding: 1rem 2rem;
+      border-radius: 2px;
+      transition: background 0.25s, transform 0.2s;
+    }
+    .hero-cta:hover { background: var(--mid); transform: translateY(-1px); }
+
+    .hero-visual {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-card {
+      background: var(--white);
+      border: 1px solid var(--mist);
+      border-radius: 4px;
+      padding: 2.8rem;
+      max-width: 360px;
+      width: 100%;
+      box-shadow: 0 8px 48px rgba(13,31,60,0.1);
+    }
+
+    .hero-card-stat {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 2rem;
+    }
+    .hero-card-stat:last-child { margin-bottom: 0; }
+
+    .stat-number {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.6rem;
+      font-weight: 300;
+      color: var(--mid);
+      line-height: 1;
+    }
+    .stat-label {
+      font-size: 0.72rem;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-soft);
+      margin-top: 0.3rem;
+    }
+    .stat-divider {
+      width: 32px;
+      height: 1px;
+      background: var(--mist);
+      margin: 1.6rem 0;
+    }
+
+    /* ── SECTIONS ── */
+    section { padding: 6rem 5vw; }
+
+    .section-header {
+      margin-bottom: 4rem;
+    }
+    .section-eyebrow {
+      font-size: 0.68rem;
+      font-weight: 400;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--steel);
+      margin-bottom: 0.8rem;
+    }
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      color: var(--navy);
+      line-height: 1.15;
+    }
+
+    /* ── ABOUT ── */
+    .about { background: var(--white); }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.6fr;
+      gap: 5rem;
+      align-items: start;
+    }
+
+    .about-left .about-quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.45rem;
+      font-weight: 300;
+      font-style: italic;
+      color: var(--mid);
+      line-height: 1.5;
+      border-left: 2px solid var(--mist);
+      padding-left: 1.6rem;
+      margin-bottom: 2rem;
+    }
+
+    .about-right p {
+      font-size: 0.98rem;
+      color: var(--text-mid);
+      margin-bottom: 1.4rem;
+      line-height: 1.85;
+    }
+
+    .about-facts {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-top: 2.4rem;
+    }
+    .about-fact {
+      padding: 1.2rem;
+      background: var(--frost);
+      border-left: 2px solid var(--mist);
+    }
+    .about-fact-label {
+      font-size: 0.65rem;
+      font-weight: 400;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-soft);
+      margin-bottom: 0.3rem;
+    }
+    .about-fact-value {
+      font-size: 0.9rem;
+      font-weight: 400;
+      color: var(--text-dark);
+    }
+
+    /* ── EXPERTISE ── */
+    .expertise { background: var(--frost); }
+
+    .expertise-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+    }
+
+    .expertise-card {
+      background: var(--white);
+      padding: 2.4rem 1.8rem;
+      border-top: 2px solid var(--mist);
+      transition: border-color 0.25s, transform 0.25s;
+    }
+    .expertise-card:hover {
+      border-color: var(--mid);
+      transform: translateY(-4px);
+    }
+
+    .expertise-icon {
+      width: 40px;
+      height: 40px;
+      margin-bottom: 1.6rem;
+      opacity: 0.7;
+    }
+
+    .expertise-card h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 500;
+      font-size: 1.3rem;
+      color: var(--navy);
+      margin-bottom: 0.8rem;
+      line-height: 1.25;
+    }
+    .expertise-card p {
+      font-size: 0.85rem;
+      color: var(--text-soft);
+      line-height: 1.75;
+    }
+
+    /* ── SPEAKING ── */
+    .speaking { background: var(--deep); }
+
+    .speaking .section-eyebrow { color: var(--sky); }
+    .speaking .section-title { color: var(--white); }
+
+    .speaking-intro {
+      font-size: 1rem;
+      color: var(--mist);
+      max-width: 640px;
+      margin-bottom: 3.5rem;
+      line-height: 1.85;
+    }
+
+    .speaking-topics {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+      margin-bottom: 4rem;
+    }
+
+    .speaking-topic {
+      padding: 2rem 2rem 2rem 1.6rem;
+      border: 1px solid rgba(184,212,232,0.2);
+      border-left: 3px solid var(--sky);
+      background: rgba(255,255,255,0.04);
+      transition: background 0.2s;
+    }
+    .speaking-topic:hover { background: rgba(255,255,255,0.07); }
+
+    .speaking-topic h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 500;
+      font-size: 1.2rem;
+      color: var(--white);
+      margin-bottom: 0.6rem;
+    }
+    .speaking-topic p {
+      font-size: 0.83rem;
+      color: var(--mist);
+      line-height: 1.75;
+    }
+
+    .speaking-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.8rem;
+      text-decoration: none;
+      font-size: 0.78rem;
+      font-weight: 400;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--white);
+      border: 1px solid rgba(255,255,255,0.3);
+      padding: 1rem 2rem;
+      border-radius: 2px;
+      transition: background 0.25s, border-color 0.25s;
+    }
+    .speaking-cta:hover {
+      background: rgba(255,255,255,0.1);
+      border-color: rgba(255,255,255,0.6);
+    }
+
+    /* ── EXPERIENCE ── */
+    .experience { background: var(--white); }
+
+    .experience-layout {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 0 3rem;
+    }
+
+    .exp-item {
+      display: contents;
+    }
+
+    .exp-meta {
+      padding-top: 0.2rem;
+      padding-bottom: 3rem;
+    }
+
+    .exp-company {
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--steel);
+      margin-bottom: 0.3rem;
+    }
+
+    .exp-period {
+      font-size: 0.75rem;
+      color: var(--text-soft);
+    }
+
+    .exp-content {
+      padding-bottom: 3rem;
+      border-bottom: 1px solid var(--pale);
+      margin-bottom: 3rem;
+    }
+    .exp-item:last-child .exp-content {
+      border-bottom: none;
+    }
+
+    .exp-role {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 500;
+      font-size: 1.35rem;
+      color: var(--navy);
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+
+    .exp-bullets {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+    .exp-bullets li {
+      font-size: 0.88rem;
+      color: var(--text-mid);
+      padding-left: 1.2rem;
+      position: relative;
+      line-height: 1.7;
+    }
+    .exp-bullets li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.65em;
+      width: 5px;
+      height: 1px;
+      background: var(--steel);
+    }
+
+    .exp-highlight {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 400;
+      color: var(--mid);
+      background: var(--pale);
+      padding: 0.25rem 0.65rem;
+      border-radius: 2px;
+      margin-top: 0.8rem;
+    }
+
+    /* ── EDUCATION ── */
+    .education { background: var(--frost); }
+
+    .education-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .edu-card {
+      background: var(--white);
+      padding: 2.2rem 2rem;
+      border-bottom: 2px solid var(--mist);
+    }
+
+    .edu-degree {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 500;
+      font-size: 1.15rem;
+      color: var(--navy);
+      margin-bottom: 0.5rem;
+      line-height: 1.3;
+    }
+    .edu-school {
+      font-size: 0.8rem;
+      font-weight: 400;
+      color: var(--steel);
+      letter-spacing: 0.06em;
+      margin-bottom: 0.4rem;
+    }
+    .edu-period {
+      font-size: 0.75rem;
+      color: var(--text-soft);
+      margin-bottom: 0.8rem;
+    }
+    .edu-note {
+      font-size: 0.78rem;
+      color: var(--text-mid);
+      font-style: italic;
+    }
+
+    /* ── IMPACT NUMBERS ── */
+    .impact { background: var(--navy); }
+
+    .impact .section-eyebrow { color: var(--sky); }
+    .impact .section-title { color: var(--white); }
+
+    .impact-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: rgba(255,255,255,0.08);
+      margin-top: 3rem;
+    }
+
+    .impact-item {
+      background: var(--navy);
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+
+    .impact-number {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3.2rem;
+      font-weight: 300;
+      color: var(--sky);
+      line-height: 1;
+      margin-bottom: 0.6rem;
+    }
+    .impact-desc {
+      font-size: 0.78rem;
+      font-weight: 400;
+      letter-spacing: 0.06em;
+      color: var(--mist);
+      line-height: 1.5;
+    }
+
+    /* ── ADDITIONAL ── */
+    .additional { background: var(--white); }
+
+    .additional-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3rem;
+    }
+
+    .additional-block h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 500;
+      font-size: 1.15rem;
+      color: var(--navy);
+      margin-bottom: 1.2rem;
+      padding-bottom: 0.8rem;
+      border-bottom: 1px solid var(--pale);
+    }
+
+    .additional-block ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.55rem;
+    }
+    .additional-block ul li {
+      font-size: 0.84rem;
+      color: var(--text-mid);
+      padding-left: 1rem;
+      position: relative;
+      line-height: 1.6;
+    }
+    .additional-block ul li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.65em;
+      width: 4px;
+      height: 1px;
+      background: var(--sky);
+    }
+
+    /* ── CONTACT ── */
+    .contact {
+      background: linear-gradient(135deg, var(--deep) 0%, var(--navy) 100%);
+      text-align: center;
+      padding: 8rem 5vw;
+    }
+
+    .contact .section-eyebrow { color: var(--sky); }
+
+    .contact-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: clamp(2.2rem, 4vw, 3.5rem);
+      color: var(--white);
+      line-height: 1.15;
+      margin-bottom: 1.2rem;
+    }
+    .contact-title em { font-style: italic; color: var(--sky); }
+
+    .contact-sub {
+      font-size: 0.95rem;
+      color: var(--mist);
+      margin-bottom: 3rem;
+      max-width: 480px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.8;
+    }
+
+    .contact-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.2rem;
+      flex-wrap: wrap;
+    }
+
+    .contact-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      text-decoration: none;
+      font-size: 0.78rem;
+      font-weight: 400;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 1rem 2rem;
+      border-radius: 2px;
+      transition: all 0.25s;
+    }
+    .contact-link.primary {
+      background: var(--sky);
+      color: var(--navy);
+    }
+    .contact-link.primary:hover { background: var(--mist); }
+    .contact-link.secondary {
+      border: 1px solid rgba(255,255,255,0.25);
+      color: var(--white);
+    }
+    .contact-link.secondary:hover { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.5); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--navy);
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding: 2rem 5vw;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .footer-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.9rem;
+      color: var(--mist);
+      letter-spacing: 0.06em;
+    }
+    .footer-copy {
+      font-size: 0.7rem;
+      color: var(--text-soft);
+      letter-spacing: 0.08em;
+    }
+
+    /* ── SCROLL ANIMATIONS ── */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1024px) {
+      .expertise-grid { grid-template-columns: repeat(2, 1fr); }
+      .impact-grid { grid-template-columns: repeat(2, 1fr); }
+      .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    }
+
+    @media (max-width: 768px) {
+      nav { padding: 1rem 5vw; }
+      .nav-links { display: none; }
+      .hero { grid-template-columns: 1fr; padding-top: 5rem; }
+      .hero-visual { display: none; }
+      .experience-layout { grid-template-columns: 1fr; gap: 0; }
+      .exp-meta { padding-bottom: 0.5rem; }
+      .education-grid { grid-template-columns: 1fr; }
+      .additional-grid { grid-template-columns: 1fr; }
+      .speaking-topics { grid-template-columns: 1fr; }
+      .impact-grid { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="nav">
+    <a href="#" class="nav-logo">Marisa Huerta</a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#expertise">Expertise</a></li>
+      <li><a href="#speaking">Speaking</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-text">
+      <p class="hero-eyebrow">Strategy · Finance · Leadership</p>
+      <h1 class="hero-name">Marisa<br /><em>Érika</em> Huerta<br />Francos</h1>
+      <p class="hero-tagline">MBA professional driving growth across LATAM through strategic planning, corporate finance, and human-centered leadership.</p>
+      <div class="hero-tags">
+        <span class="hero-tag">Strategy &amp; Planning</span>
+        <span class="hero-tag">Real Estate Finance</span>
+        <span class="hero-tag">Tax Consulting</span>
+        <span class="hero-tag">Women in Leadership</span>
+      </div>
+      <a href="#contact" class="hero-cta">Get in touch &nbsp;→</a>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-card">
+        <div class="hero-card-stat">
+          <span class="stat-number">14+</span>
+          <span class="stat-label">Years of experience</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="hero-card-stat">
+          <span class="stat-number">$3.2B</span>
+          <span class="stat-label">Real estate portfolio managed</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="hero-card-stat">
+          <span class="stat-number">$22M</span>
+          <span class="stat-label">New revenue generated for LATAM</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="hero-card-stat">
+          <span class="stat-number">0.1%</span>
+          <span class="stat-label">Top EY employees globally</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="section-header fade-up">
+      <p class="section-eyebrow">About</p>
+      <h2 class="section-title">Where rigor<br />meets vision</h2>
+    </div>
+    <div class="about-grid fade-up">
+      <div class="about-left">
+        <p class="about-quote">"Turning complexity into clarity, and clarity into results."</p>
+      </div>
+      <div class="about-right">
+        <p>I am an MBA professional with over 14 years of experience spanning strategy, corporate finance, real estate debt, international tax consulting, and business development. My career has taken me from the structured world of EY's international tax practice to the fast-paced environment of Uber's LATAM organization — where I currently lead Commercial Strategy & Planning.</p>
+        <p>I am known for bridging financial discipline with strategic ambition: managing a $3.2B real estate portfolio with zero defaults, launching revenue-generating programs across 20+ markets, and improving analytical capabilities by 80% through data and AI-driven tools.</p>
+        <p>Beyond the numbers, I am deeply committed to the advancement of women in business. As the regional lead for Women @ Uber LATAM, I have built frameworks for allyship and leadership engagement that have grown across the region for years.</p>
+        <div class="about-facts">
+          <div class="about-fact">
+            <div class="about-fact-label">Education</div>
+            <div class="about-fact-value">MBA, IPADE · B.Sc. with Honors, UP</div>
+          </div>
+          <div class="about-fact">
+            <div class="about-fact-label">Languages</div>
+            <div class="about-fact-value">Spanish · English (Advanced) · Portuguese</div>
+          </div>
+          <div class="about-fact">
+            <div class="about-fact-label">Base</div>
+            <div class="about-fact-value">Mexico City · LATAM</div>
+          </div>
+          <div class="about-fact">
+            <div class="about-fact-label">Teaching</div>
+            <div class="about-fact-value">Professor, Universidad Panamericana</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERTISE -->
+  <section class="expertise" id="expertise">
+    <div class="section-header fade-up">
+      <p class="section-eyebrow">Areas of Expertise</p>
+      <h2 class="section-title">Four pillars of<br />deep expertise</h2>
+    </div>
+    <div class="expertise-grid fade-up">
+      <div class="expertise-card">
+        <svg class="expertise-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M4 36 L20 8 L36 36" stroke="#2e5fa3" stroke-width="1.5" stroke-linejoin="round"/>
+          <path d="M10 26 L30 26" stroke="#7aaed6" stroke-width="1"/>
+          <circle cx="20" cy="8" r="2" fill="#2e5fa3"/>
+        </svg>
+        <h3>Strategy &amp; Planning</h3>
+        <p>Regional strategy design, KPI frameworks, cross-functional leadership, and data-driven decision-making at scale. Proven across Uber's LATAM organization covering 20+ markets.</p>
+      </div>
+      <div class="expertise-card">
+        <svg class="expertise-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="6" y="14" width="28" height="20" rx="1" stroke="#2e5fa3" stroke-width="1.5"/>
+          <path d="M13 14 L13 10 Q20 6 27 10 L27 14" stroke="#7aaed6" stroke-width="1"/>
+          <path d="M14 22 L26 22 M14 27 L22 27" stroke="#2e5fa3" stroke-width="1"/>
+        </svg>
+        <h3>Real Estate Financing</h3>
+        <p>Structured loan origination, due diligence, collateral valuation, portfolio management, and risk assessment. Managed a $3.2B USD debt portfolio in Mexico with zero defaults.</p>
+      </div>
+      <div class="expertise-card">
+        <svg class="expertise-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="20" cy="20" r="14" stroke="#2e5fa3" stroke-width="1.5"/>
+          <path d="M20 10 L20 20 L28 20" stroke="#7aaed6" stroke-width="1.2" stroke-linecap="round"/>
+          <circle cx="20" cy="20" r="2" fill="#2e5fa3"/>
+        </svg>
+        <h3>Tax Consulting</h3>
+        <p>International tax advisory, corporate restructuring, due diligence, and compliance across real estate, infrastructure, energy, and oil &amp; gas sectors. EY Senior Consultant, top 0.1% globally.</p>
+      </div>
+      <div class="expertise-card">
+        <svg class="expertise-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="14" cy="14" r="6" stroke="#2e5fa3" stroke-width="1.5"/>
+          <circle cx="28" cy="14" r="6" stroke="#7aaed6" stroke-width="1.5"/>
+          <path d="M6 34 Q6 26 14 26 Q20 26 20 26 Q20 26 26 26 Q34 26 34 34" stroke="#2e5fa3" stroke-width="1.5" fill="none"/>
+        </svg>
+        <h3>Women in Leadership</h3>
+        <p>Building allyship frameworks, leadership engagement programs, and professional development initiatives. Regional lead for Women @ Uber LATAM, partnering with NGOs and executives across Latin America.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- IMPACT NUMBERS -->
+  <section class="impact" id="impact">
+    <div class="section-header fade-up">
+      <p class="section-eyebrow">Impact by the numbers</p>
+      <h2 class="section-title">Results that speak</h2>
+    </div>
+    <div class="impact-grid fade-up">
+      <div class="impact-item">
+        <div class="impact-number">$22M</div>
+        <div class="impact-desc">New LATAM revenue from<br />Offers Monetization launch</div>
+      </div>
+      <div class="impact-item">
+        <div class="impact-number">$3.2B+</div>
+        <div class="impact-desc">Real estate debt portfolio<br />managed with zero defaults</div>
+      </div>
+      <div class="impact-item">
+        <div class="impact-number">80%</div>
+        <div class="impact-desc">Improvement in data<br />monitoring &amp; analytics</div>
+      </div>
+      <div class="impact-item">
+        <div class="impact-number">30+</div>
+        <div class="impact-desc">Structured loans originated<br />&amp; closed at MetLife</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SPEAKING -->
+  <section class="speaking" id="speaking">
+    <div class="section-header fade-up">
+      <p class="section-eyebrow">Speaking &amp; Panels</p>
+      <h2 class="section-title">Sharing what<br />the work taught me</h2>
+    </div>
+    <p class="speaking-intro fade-up">I bring real-world perspective forged across multinational organizations, high-stakes financial environments, and purpose-driven leadership. I am available to speak at conferences, panels, and corporate events on the following topics.</p>
+    <div class="speaking-topics fade-up">
+      <div class="speaking-topic">
+        <h4>Strategy &amp; Business Planning in the Digital Age</h4>
+        <p>How to design regional strategies, align global priorities with local realities, and use AI and data tools to sharpen planning and decision-making in large organizations.</p>
+      </div>
+      <div class="speaking-topic">
+        <h4>Real Estate Finance &amp; Debt Portfolio Management</h4>
+        <p>A deep dive into structured lending, risk assessment, collateral valuation, and building resilient portfolios — drawn from managing $3.2B in Mexican real estate debt.</p>
+      </div>
+      <div class="speaking-topic">
+        <h4>International Tax Strategy for Corporates</h4>
+        <p>Corporate restructuring, cross-border due diligence, and tax compliance across real estate, infrastructure, and energy — with experience at EY serving global clients.</p>
+      </div>
+      <div class="speaking-topic">
+        <h4>Women, Leadership &amp; Professional Growth</h4>
+        <p>Building inclusive workplaces, allyship frameworks, and leadership pipelines for women in business — from grassroots programs to regional strategy at scale across LATAM.</p>
+      </div>
+    </div>
+    <a href="#contact" class="speaking-cta fade-up">Invite me to speak &nbsp;→</a>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section class="experience" id="experience">
+    <div class="section-header fade-up">
+      <p class="section-eyebrow">Professional Experience</p>
+      <h2 class="section-title">A career built<br />on substance</h2>
+    </div>
+
+    <div class="experience-layout fade-up">
+
+      <!-- Uber current -->
+      <div class="exp-item">
+        <div class="exp-meta">
+          <div class="exp-company">Uber</div>
+          <div class="exp-period">Dec 2025 – Present</div>
+        </div>
+        <div class="exp-content">
+          <div class="exp-role">Manager, Commercial Strategy &amp; Planning — Ads &amp; Offers</div>
+          <ul class="exp-bullets">
+            <li>Regional point of contact for Product on Ads &amp; Offers features, translating global priorities into actionable commercial strategies.</li>
+            <li>Led the launch of Offers Monetization in Chile and Central America, enabling a new revenue stream expected to add $22M to LATAM's bottomline in 2026.</li>
+            <li>Advises merchants on campaign optimization strategies during high-impact events such as the FIFA World Cup.</li>
+            <li>Strategic thought partner to commercial leadership, delivering data-driven recommendations for SMB growth.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Uber BD -->
+      <div class="exp-item">
+        <div class="exp-meta">
+          <div class="exp-company">Uber</div>
+          <div class="exp-period">Apr 2020 – Nov 2025</div>
+        </div>
+        <div class="exp-content">
+          <div class="exp-role">Manager, Strategy &amp; Planning — Business Development LATAM, Hailables &amp; Payments</div>
+          <ul class="exp-bullets">
+            <li>Led design and execution of regional strategies covering partnerships, Hailables, and Payments programs across LATAM.</li>
+            <li>Improved data monitoring and analytics by 80%, leveraging AI tools to strengthen strategic planning.</li>
+            <li>Defined priorities and KPIs aligned to global guidelines, ensuring strategic focus and accountability.</li>
+            <li>Executed special projects for LATAM leadership including strategic planning and team alignment.</li>
+          </ul>
+          <span class="exp-highlight">Also: Women @ Uber LATAM — Strategy &amp; Planning Lead (Sep 2021 – present)</span>
+        </div>
+      </div>
+
+      <!-- MetLife -->
+      <div class="exp-item">
+        <div class="exp-meta">
+          <div class="exp-company">MetLife Investments</div>
+          <div class="exp-period">Aug 2017 – Jan 2020</div>
+        </div>
+        <div class="exp-content">
+          <div class="exp-role">Associate — Real Estate Debt</div>
+          <ul class="exp-bullets">
+            <li>Managed a real estate debt portfolio exceeding $3.2B USD in Mexico: loan ratings, collateral valuations, property inspections, client relations, and lease approvals — zero defaults during tenure.</li>
+            <li>Supported origination and closing of 30+ structured loans, leading due diligence and risk assessment.</li>
+            <li>Restructured portfolio management processes, improving real-time financial analysis efficiency by 50%.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- BBVA -->
+      <div class="exp-item">
+        <div class="exp-meta">
+          <div class="exp-company">BBVA Bancomer</div>
+          <div class="exp-period">Jun – Aug 2016</div>
+        </div>
+        <div class="exp-content">
+          <div class="exp-role">Associate — Project Finance (MBA Summer)</div>
+          <ul class="exp-bullets">
+            <li>Developed financial models for energy, oil &amp; gas, real estate, and infrastructure projects.</li>
+            <li>Analyzed developer capabilities and designed financing scenarios aligned with business models.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- EY -->
+      <div class="exp-item">
+        <div class="exp-meta">
+          <div class="exp-company">EY (Ernst &amp; Young)</div>
+          <div class="exp-period">Oct 2011 – Sep 2015</div>
+        </div>
+        <div class="exp-content">
+          <div class="exp-role">Senior Consultant 3 — International Tax Services</div>
+          <ul class="exp-bullets">
+            <li>Led teams across corporate restructures of international groups, due diligences, and financial modeling for real estate, infrastructure, oil &amp; gas, and energy.</li>
+            <li>Contributed to generating hundreds of millions of MXN, making the tax area the highest-growth practice in Mexico at the time.</li>
+            <li>Promoted ahead of schedule to Senior Consultant (2013) for outstanding performance.</li>
+            <li>Selected among the top 0.1% of EY employees globally for an international exchange program in New York.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Teaching -->
+      <div class="exp-item">
+        <div class="exp-meta">
+          <div class="exp-company">Universidad Panamericana</div>
+          <div class="exp-period">Aug 2019 – Jun 2023</div>
+        </div>
+        <div class="exp-content">
+          <div class="exp-role">Professor — Finance &amp; Accounting</div>
+          <ul class="exp-bullets">
+            <li>Taught undergraduate courses in English: Financial Accounting, Financial Information Control, and Cost Analysis.</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section class="education" id="education">
+    <div class="section-header fade-up">
+      <p class="section-eyebrow">Education</p>
+      <h2 class="section-title">Academic<br />foundation</h2>
+    </div>
+    <div class="education-grid fade-up">
+      <div class="edu-card">
+        <div class="edu-degree">Master in Business Administration</div>
+        <div class="edu-school">IPADE Business School</div>
+        <div class="edu-period">2015 – 2017</div>
+        <div class="edu-note">International exchange term at Uniwersytet Ekonomiczny W Poznaniu, Poland (Sep–Dec 2016)</div>
+      </div>
+      <div class="edu-card">
+        <div class="edu-degree">Bachelor in Accounting &amp; Finance Direction</div>
+        <div class="edu-school">Universidad Panamericana</div>
+        <div class="edu-period">2009 – 2013</div>
+        <div class="edu-note">Graduated with honors</div>
+      </div>
+      <div class="edu-card">
+        <div class="edu-degree">Continuing Education &amp; Certifications</div>
+        <div class="edu-school">Google · IELTS 8/9 · TOEIC 975/990</div>
+        <div class="edu-period">2010 – 2025</div>
+        <div class="edu-note">Gen AI Leader Edition (Google, 2025) · First Certificate in English Grade A · Young Learners Teacher's Certificate</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ADDITIONAL -->
+  <section class="additional" id="additional">
+    <div class="section-header fade-up">
+      <p class="section-eyebrow">Beyond the role</p>
+      <h2 class="section-title">Commitments &amp;<br />contributions</h2>
+    </div>
+    <div class="additional-grid fade-up">
+      <div class="additional-block">
+        <h3>Board &amp; Civic</h3>
+        <ul>
+          <li>Board Member, SIR — environmental consulting, hazardous waste &amp; water treatment (2021–present)</li>
+          <li>Registered member, School of Public Accountants in Mexico</li>
+          <li>Vice-President, Student Council of Accounting, Universidad Panamericana (2010–2011)</li>
+        </ul>
+      </div>
+      <div class="additional-block">
+        <h3>Volunteering</h3>
+        <ul>
+          <li>"Soñar Despierto" — support for children with scarce resources and terminal illness (2008–2013)</li>
+          <li>Spectator Services volunteer, FIFA World Cup Brazil (2014)</li>
+          <li>Youth personal development program, Brazil (2007)</li>
+        </ul>
+      </div>
+      <div class="additional-block">
+        <h3>Languages &amp; Skills</h3>
+        <ul>
+          <li>Spanish — Native</li>
+          <li>English — Advanced (IELTS 8/9, TOEIC 975/990, TOEFL 610/690)</li>
+          <li>Portuguese — Conversational (80%)</li>
+          <li>Gen AI tools applied to strategic planning</li>
+          <li>Financial modeling · Cross-cultural management</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <p class="section-eyebrow">Contact</p>
+    <h2 class="contact-title">Let's build<br /><em>something meaningful</em></h2>
+    <p class="contact-sub">Whether you're looking for a strategic partner, a speaker for your next event, or a leader to join your team — I'd love to connect.</p>
+    <div class="contact-links">
+      <a href="mailto:marisa_2591@hotmail.com" class="contact-link primary">Send an email</a>
+      <a href="tel:+525516579791" class="contact-link secondary">+52 55 1657 9791</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <span class="footer-name">Marisa Érika Huerta Francos</span>
+    <span class="footer-copy">© 2026</span>
+  </footer>
+
+  <script>
+    // Scroll nav shadow
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 20);
+    });
+
+    // Fade-up on scroll
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
